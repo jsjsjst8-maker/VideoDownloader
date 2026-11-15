@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VideoDownloader | Online Video Downloader</title>
+    <meta name="description" content="VideoDownloader - Online video downloader.">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <main class="page">
+
+        <nav class="navbar">
+            <div class="brand">
+                <div class="logo">▶</div>
+                <span>VideoDownloader</span>
+            </div>
+
+            <div class="nav-label">
+                Online Video Tools
+            </div>
+        </nav>
+
+        <section class="hero">
+
+            <div class="tag">VIDEO DOWNLOADER</div>
+
+            <h1>
+                Download videos.<br>
+                <span>Fast and simple.</span>
+            </h1>
+
+            <p class="subtitle">
+                Paste your video link and download your content.
+            </p>
+
+            <form class="search-box" method="POST">
+                <div class="link-icon">↗</div>
+
+                <input
+                    type="url"
+                    name="video_url"
+                    placeholder="Paste video link here..."
+                    required
+                >
+
+                <button type="submit">
+                    Download <span>↓</span>
+                </button>
+            </form>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="message {{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <div class="hint">
+                <span class="dot"></span>
+                Easy online video downloading
+            </div>
+
+        </section>
+
+        <section class="steps">
+
+            <div class="step">
+                <span>01</span>
+                <h3>Copy Link</h3>
+                <p>Copy a supported video link.</p>
+            </div>
+
+            <div class="step">
+                <span>02</span>
+                <h3>Paste Link</h3>
+                <p>Paste your link into the search box.</p>
+            </div>
+
+            <div class="step">
+                <span>03</span>
+                <h3>Download</h3>
+                <p>Save content you own or have permission to download.</p>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>
+                Respect copyright and platform terms.
+                Only download content you have permission to save.
+            </p>
+
+            <span>VideoDownloader © 2026</span>
+        </footer>
+
+    </main>
+</body>
+</html>
